@@ -1,2 +1,2 @@
 # Smart-bookshelf
-repository of smart bookshelf project
+This is the Github were you can find the code for the smart bookshelf project.
