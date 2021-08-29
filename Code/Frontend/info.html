@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>boekenkast</title>
+    <link rel="stylesheet" href="https://use.typekit.net/erp4eix.css">
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/screen.css">
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js" integrity="sha384-LzhRnpGmQP+lOvWruF/lgkcqD+WDVt9fU3H4BWmwP5u5LTmkUGafMcpZKNObVMLU" crossorigin="anonymous"></script>
+    <script src="script/datahandler.js"></script>
+    <script src="script/app.js"></script>
+  </head>
+  <body>
+    <header class="o-row o-row--neutral-xx-dark o-fixed">
+      <div class="o-container">
+        <div class="c-header">
+          <h1 class="c-logo">
+              My Bookcase
+          </h1>
+          <div class="c-header__nav">
+              <nav class="c-nav">
+                  <ul class="o-list c-nav__list">
+                    <li class="c-nav__item"><a href="index.html" class="c-nav__link">Bookcase</a></li>
+                    <li class="c-nav__item"><a href="libraries.html" class="c-nav__link">Libraries</a></li>
+                    <li class="c-nav__item"><a href="books.html" class="c-nav__link">Books</a></li>
+                    <li class="c-nav__item js-shutdown"><a class="c-nav__link c-link-cta c-link-cta--dark">Shut Down</a></li>
+                  </ul>
+              </nav>
+          </div>
+          <div class="c-header__mobile-nav-trigger">
+            <button class="o-button-reset c-nav-trigger js-toggle-nav">
+                <svg class="c-nav-trigger__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </button>
+          </div>
+        </div> 
+      </div>
+    </header>
+    <section class="o-row o-row--xxl"> 
+      <div class="o-container o-container--article">
+        <div class="o-layout o-layout--justify-center">
+          <div class="o-layout__item u-1-of-2-bp3">
+            <div class=" c-border u-p-sm u-m-md ">
+              <div class="o-layout o-layout--justify-space-between u-mt-md u-mr-md">
+                <h2>Info book:</h2>
+                <button class="o-button-reset c-nav-trigger js-icon-aanpassen">
+                  <svg class="c-nav-trigger__svg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="js-info">
+                <div class="o-layout u-mb-md">
+                  <p class="o-layout__item u-1-of-2 u-1-of-3-bp1">Position: </p>
+                  <p class="o-layout__item u-1-of-2 u-2-of-3-bp1">1</p>
+                </div>  
+                <div class="o-layout u-mb-md">
+                  <p class="o-layout__item u-1-of-2 u-1-of-3-bp1">Name:</p>
+                  <p class="o-layout__item u-1-of-2 u-2-of-3-bp1">The hitchhiker's gide to the galaxy</p>
+                </div>
+                <div class="o-layout u-mb-md">
+                  <p class="o-layout__item u-1-of-2 u-1-of-3-bp1">Author</p>
+                  <p class="o-layout__item u-1-of-2 u-2-of-3-bp1">Douglas Adams</p>
+                </div>
+                <div class="o-layout u-mb-md">
+                  <p class="o-layout__item u-1-of-2 u-1-of-3-bp1">Library:</p>
+                  <p class="o-layout__item u-1-of-2 u-2-of-3-bp1">Zedelgem</p>
+                </div>
+                <div class="o-layout u-mb-xxl">
+                  <p class="o-layout__item u-1-of-2 u-1-of-3-bp1">Return Date:</p>
+                  <p class="o-layout__item u-1-of-2 u-2-of-3-bp1">2020-04-20</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="o-layout__item u-1-of-2-bp3">
+            <div class=" c-border u-p-sm u-m-md">
+              <h2 class="u-mt-md">extend period book:</h2>
+              <div class="o-layout">
+                <div class="o-layout__item u-mb-md o-layout o-layout--justify-center js-4-weeken">
+                  <p >
+                    <a class="c-link-cta">
+                        extend 4 weeks
+                    </a>
+                  </p>
+                </div>
+                  <h2 class="o-layout__item u-mb-md o-layout o-layout--justify-center">or</h2>
+                  <div class="o-layout__item u-mb-md o-layout o-layout--justify-center">
+                    <label for="extendBook">select date</label>
+                    <input class="u-ml-md" type="date" name="extendPeriodBook" id="extendBook">
+                  </div>
+                  <p class="o-layout__item u-mb-xxl o-layout o-layout--justify-center js-selected-date">
+                    <a class="c-link-cta">
+                        extend to selected date
+                    </a>
+                  </p>
+              </div>
+            </div>
+          </div>
+          <div class="o-layout__item u-1-of-2-bp3 o-layout o-layout--justify-center">
+            <div class="o-layout__item c-border u-p-sm u-m-md">
+              <h2 class="u-mt-md" >Hand book in:</h2>
+              <div class="o-layout">
+                <p class="o-layout__item u-mb-md o-layout o-layout--justify-center js-hand-in">
+                  <a class="c-link-cta ">
+                      Hand in
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>   
+      </div>
+    </section>
+
+    <aside class="c-mobile-nav">
+      <div class="c-mobile-nav__bg"></div>
+      <div class="c-mobile-nav__body">
+          <div class="c-mobile-nav__header ">
+              <h1>My bookcase</h1>
+              <button class="o-button-reset c-nav-trigger js-toggle-nav">
+                  <svg class="c-nav-trigger__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                  </svg>
+              </button>
+          </div>
+          <div class="c-mobile-nav__nav c-mobile-nav__nav--main">
+              <nav class="c-nav">
+                <ul class="o-list c-nav__list">
+                  <li class="c-nav__item"><a href="index.html" class="c-nav__link">Bookcase</a></li>
+                  <li class="c-nav__item"><a href="libraries.html" class="c-nav__link">Libraries</a></li>
+                  <li class="c-nav__item"><a href="books.html" class="c-nav__link">Books</a></li>
+                </ul>
+              </nav>
+          </div>
+      </div>
+    </aside>
+  </body>
+</html>
